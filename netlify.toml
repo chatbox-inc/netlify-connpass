@@ -1,4 +1,4 @@
 [build]
-  Command = "npm run build"
+  Command = "netlify-lamda build src"
   functions = "functions"
   publish = "dist"
