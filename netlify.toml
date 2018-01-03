@@ -5,4 +5,4 @@
 
 [context.production]
   [context.production.environment]
-    CONNPASS_SERIES_ID=1712
+    CONNPASS_SERIES_ID="1712"
