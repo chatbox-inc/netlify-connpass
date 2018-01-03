@@ -1113,7 +1113,7 @@ var _axios2 = _interopRequireDefault(_axios);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var connpass = {
+var api = {
   get: async function get() {
     var url = 'https://connpass.com/api/v1/event/';
     var params = {
@@ -1125,7 +1125,7 @@ var connpass = {
 };
 
 exports.handler = function (event, context, callback) {
-  connpass.get().then(function (result) {
+  api.get().then(function (result) {
     console.log(result);
     callback(null, {
       statusCode: 200,

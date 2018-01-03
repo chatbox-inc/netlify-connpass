@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const connpass = {
+const api = {
   async get () {
     const url = 'https://connpass.com/api/v1/event/'
     const params = {
@@ -12,7 +12,7 @@ const connpass = {
 }
 
 exports.handler = (event, context, callback) => {
-  connpass.get().then((result) => {
+  api.get().then((result) => {
     console.log(result)
     callback(null, {
       statusCode: 200,

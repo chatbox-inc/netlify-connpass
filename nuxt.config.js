@@ -23,6 +23,10 @@ module.exports = {
   */
   modules: [
     '@nuxtjs/dotenv',
+    '@nuxtjs/proxy',
     '@nuxtjs/pwa'
-  ]
+  ],
+  proxy: {
+    '/events': 'http://localhost:9000'
+  }
 }
