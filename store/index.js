@@ -1,4 +1,4 @@
-import api from '~/service/http.js'
+import axios from 'axios'
 
 export const state = () => ({
   events: []
@@ -23,7 +23,9 @@ export const mutations = {
 
 export const actions = {
   async LOAD_EVENTS ({commit}) {
-    const result = await api.get_fs()
-    commit('ADD_EVENTS', result)
+    const result = await axios.get('/events', {
+      baseURL: process.env.FRONT_API_URL
+    })
+    commit('ADD_EVENTS', result.data)
   }
 }

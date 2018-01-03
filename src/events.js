@@ -1,7 +1,17 @@
-import api from '../service/http'
+import axios from 'axios'
+
+exports.api = () => {
+  const url = 'https://connpass.com/api/v1/event/'
+  const params = {
+    series_id: process.env.CONNPASS_SERIES_ID
+  }
+  return axios.get(url, {params}).then((result)=>{
+    return result.data.events
+  })
+}
 
 exports.handler = (event, context, callback) => {
-  api.get_ss().then((result) => {
+  exports.api().then((result) => {
     console.log(result)
     callback(null, {
       statusCode: 200,
@@ -13,8 +23,8 @@ exports.handler = (event, context, callback) => {
   }).catch((e) => {
     console.log(e)
     callback(null, {
-      statusCode: 200,
-      body: e
+      statusCode: 500,
+      body: 'error'
     })
   })
 }
