@@ -27,8 +27,8 @@
         return this.$store.state.events
       }
     },
-    async mounted () {
-      this.$store.dispatch('LOAD_EVENTS')
+    async fetch ({store}) {
+      await store.dispatch('LOAD_EVENTS')
     }
   }
 </script>

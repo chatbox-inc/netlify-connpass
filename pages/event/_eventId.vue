@@ -5,6 +5,9 @@
       <h1 class="title">
         {{event.title}}
       </h1>
+      <p>
+        {{events.length}}
+      </p>
       <h2 class="subtitle">
         {{event.catch}}
       </h2>
@@ -28,11 +31,17 @@
       event () {
         const event = this.$store.getters.eventById(this.eventId)
         return event
+      },
+      events () {
+        const events = this.$store.state.events
+        return events
       }
     },
-    async mounted () {
-      if (this.event === false) {
-        this.$store.dispatch('LOAD_EVENTS')
+    async fetch ({store, params}) {
+      const event = store.getters.eventById(params.eventId)
+      if (event === false) {
+        const hoge = await store.dispatch('LOAD_EVENTS')
+        console.log("pipipi",hoge)
       }
     }
   }

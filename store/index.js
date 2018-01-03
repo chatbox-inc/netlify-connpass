@@ -27,5 +27,6 @@ export const actions = {
       baseURL: process.env.FRONT_API_URL
     })
     commit('ADD_EVENTS', result.data)
+    return result.data
   }
 }

@@ -8,15 +8,6 @@ module.exports = {
     FRONT_API_URL: process.env.FRONT_API_URL
   },
   build: {
-    // extend (config, { isServer }) {
-    //   if (isServer) {
-    //     config.externals = [
-    //       nodeExternals({
-    //         whitelist: [/^.\/service\/http.js/]
-    //       })
-    //     ]
-    //   }
-    // }
   },
   /*
   ** Headers
@@ -33,20 +24,18 @@ module.exports = {
   manifest: {
     theme_color: '#3B8070'
   },
-  // generate: {
-  //   routes (callback) {
-  //     // import api from './service/http.js'
-  //     const hoge = require("./src/events")
-  //     require('dotenv').config()
-  //     return api.get_ss().then((result) => {
-  //       const routes = result.map((event) => {
-  //         return `/events/${event.event_id}`
-  //       })
-  //       routes.push("/")
-  //       callback(null, routes)
-  //     }).catch(callback)
-  //   }
-  // },
+  generate: {
+    routes (callback) {
+      const {api} = require('./src/events')
+      require('dotenv').config()
+      return api().then((result) => {
+        const routes = result.map((event) => {
+          return `/event/${event.event_id}`
+        })
+        callback(null, routes)
+      }).catch(callback)
+    }
+  },
   /*
   ** Modules
   */
