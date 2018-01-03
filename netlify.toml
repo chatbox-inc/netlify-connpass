@@ -6,3 +6,4 @@
 [context.production]
   [context.production.environment]
     CONNPASS_SERIES_ID="1712"
+    FRONT_API_URL="http://localhost:3000"
