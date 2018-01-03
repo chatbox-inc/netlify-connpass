@@ -9,6 +9,7 @@ export default {
       return result.data
     } catch (e) {
       console.log(e)
+      console.log(process.env.FRONT_API_URL)
       throw new Error('hogehoge')
     }
   },
