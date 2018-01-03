@@ -14,7 +14,7 @@
   },
   "scripts": {
     "dev": "nuxt",
-    "build": "netlify-lamda build src && nuxt build",
+    "build": "netlify-lambda build src && nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
