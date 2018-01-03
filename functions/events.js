@@ -1240,6 +1240,7 @@ exports.default = {
       });
       return result.data;
     } catch (e) {
+      console.log(e);
       throw new Error('hogehoge');
     }
   },
