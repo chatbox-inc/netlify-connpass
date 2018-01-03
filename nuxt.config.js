@@ -4,6 +4,9 @@ module.exports = {
   /*
   ** Build configuration
   */
+  env: {
+    FRONT_API_URL: process.env.FRONT_API_URL
+  },
   build: {
     // extend (config, { isServer }) {
     //   if (isServer) {
