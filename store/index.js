@@ -23,7 +23,7 @@ export const mutations = {
 
 export const actions = {
   async LOAD_EVENTS ({commit}) {
-    const result = await api.get()
-    commit('ADD_EVENTS', result.data)
+    const result = await api.get_fs()
+    commit('ADD_EVENTS', result)
   }
 }

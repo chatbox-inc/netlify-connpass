@@ -1,18 +1,7 @@
-import axios from 'axios'
-
-const api = {
-  async get () {
-    const url = 'https://connpass.com/api/v1/event/'
-    const params = {
-      series_id: process.env.CONNPASS_SERIES_ID
-    }
-    const result = await axios.get(url, {params})
-    return result.data.events
-  }
-}
+import api from '../service/http'
 
 exports.handler = (event, context, callback) => {
-  api.get().then((result) => {
+  api.get_ss().then((result) => {
     console.log(result)
     callback(null, {
       statusCode: 200,

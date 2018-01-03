@@ -1,3 +1,5 @@
+// const api = require('./service/http.js')
+
 module.exports = {
   /*
   ** Build configuration
@@ -18,6 +20,18 @@ module.exports = {
   manifest: {
     theme_color: '#3B8070'
   },
+  // generate: {
+    // routes (callback) {
+    //   require('dotenv').config()
+    //   return api.get_ss().then((result) => {
+    //     const routes = result.map((event) => {
+    //       return `/events/${event.event_id}`
+    //     })
+    //     routes.push("/")
+    //     callback(null, routes)
+    //   }).catch(callback)
+    // }
+  // },
   /*
   ** Modules
   */
