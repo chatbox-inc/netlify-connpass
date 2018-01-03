@@ -4,7 +4,7 @@ const connpass = {
   async get () {
     const url = 'https://connpass.com/api/v1/event/'
     const params = {
-      series_id: 1712
+      series_id: process.env.CONNPASS_SERIES_ID
     }
     const result = await axios.get(url, {params})
     return result.data.events

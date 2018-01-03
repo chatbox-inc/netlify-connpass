@@ -1117,7 +1117,7 @@ var connpass = {
   get: async function get() {
     var url = 'https://connpass.com/api/v1/event/';
     var params = {
-      series_id: 1712
+      series_id: process.env.CONNPASS_SERIES_ID
     };
     var result = await _axios2.default.get(url, { params: params });
     return result.data.events;
