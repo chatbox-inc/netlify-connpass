@@ -22,6 +22,7 @@ module.exports = {
   ** Modules
   */
   modules: [
+    '@nuxtjs/dotenv',
     '@nuxtjs/pwa'
   ]
 }
