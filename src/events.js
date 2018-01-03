@@ -1,4 +1,4 @@
-import axios from 'axios'
+const axios = require('axios')
 
 exports.api = () => {
   const url = 'https://connpass.com/api/v1/event/'

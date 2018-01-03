@@ -36,7 +36,7 @@ module.exports = {
   // generate: {
   //   routes (callback) {
   //     // import api from './service/http.js'
-  //     const api = require('./service/http.js')
+  //     const hoge = require("./src/events")
   //     require('dotenv').config()
   //     return api.get_ss().then((result) => {
   //       const routes = result.map((event) => {
