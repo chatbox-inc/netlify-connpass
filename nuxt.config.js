@@ -5,15 +5,15 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    extend (config, { isServer }) {
-      if (isServer) {
-        config.externals = [
-          nodeExternals({
-            whitelist: [/^.\/service\/http.js/]
-          })
-        ]
-      }
-    }
+    // extend (config, { isServer }) {
+    //   if (isServer) {
+    //     config.externals = [
+    //       nodeExternals({
+    //         whitelist: [/^.\/service\/http.js/]
+    //       })
+    //     ]
+    //   }
+    // }
   },
   /*
   ** Headers
