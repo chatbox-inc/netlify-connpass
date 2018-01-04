@@ -5,6 +5,7 @@ exports.api = () => {
   const params = {
     series_id: process.env.CONNPASS_SERIES_ID
   }
+  console.log(`use SERIES_ID: ${process.env.CONNPASS_SERIES_ID}`)
   return axios.get(url, {params}).then((result)=>{
     return result.data.events
   })
@@ -19,12 +20,6 @@ exports.handler = (event, context, callback) => {
         'Content-type': 'application/json'
       },
       body: JSON.stringify(result)
-    })
-  }).catch((e) => {
-    console.log(e)
-    callback(null, {
-      statusCode: 500,
-      body: 'error'
     })
   })
 }

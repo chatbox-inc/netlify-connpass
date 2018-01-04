@@ -41,7 +41,6 @@
       const event = store.getters.eventById(params.eventId)
       if (event === false) {
         const hoge = await store.dispatch('LOAD_EVENTS')
-        console.log("pipipi",hoge)
       }
     }
   }
