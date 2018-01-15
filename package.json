@@ -17,6 +17,7 @@
     "npm-run-all": "^4.1.2",
     "nuxt": "latest"
   },
+  "engines" : { "node" : "~8" },
   "scripts": {
     "dev": "run-p dev:*",
     "dev:nuxt": "nuxt",
