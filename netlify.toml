@@ -6,3 +6,6 @@
   [context.production.environment]
     CONNPASS_SERIES_ID="1712"
     FRONT_API_URL="https://fervent-poincare-30f02e.netlify.com/.netlify/functions"
+[template.environment]
+  CONNPASS_SERIES_ID = "change me for your secret token"
+  FRONT_API_URL = "set the url to your custom logo here"

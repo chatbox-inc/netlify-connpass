@@ -11,11 +11,16 @@
     "axios": "^0.17.1",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
+    "bootstrap": "^4.0.0-beta.2",
+    "bootstrap-vue": "^1.4.1",
     "netlify-lambda": "^0.1.1",
+    "npm-run-all": "^4.1.2",
     "nuxt": "latest"
   },
   "scripts": {
-    "dev": "nuxt",
+    "dev": "run-p dev:*",
+    "dev:nuxt": "nuxt",
+    "dev:api": "node -r dotenv/config ./node_modules/.bin/netlify-lambda serve src",
     "build": "touch .env && netlify-lambda build src && nuxt generate",
     "start": "nuxt start",
     "generate": "nuxt generate",

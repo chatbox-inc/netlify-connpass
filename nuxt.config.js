@@ -42,7 +42,8 @@ module.exports = {
   modules: [
     '@nuxtjs/dotenv',
     '@nuxtjs/proxy',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    'bootstrap-vue/nuxt'
   ],
   proxy: {
     '/events': 'http://localhost:9000'

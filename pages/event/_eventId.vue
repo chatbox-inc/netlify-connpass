@@ -1,20 +1,24 @@
 <template>
-  <section class="container">
-    <div>
-      <logo/>
+  <section class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="date">{{date}}</div>
       <h1 class="title">
         {{event.title}}
       </h1>
-      <p>
-        {{events.length}}
-      </p>
-      <h2 class="subtitle">
+      <p class="">
         {{event.catch}}
-      </h2>
+      </p>
+      <div class="subtitle">address</div>
 
-      <a :href="event.event_url">Connpassで見る</a>
+      <div>{{event.place}}</div>
+      <div>{{event.address}}</div>
 
-      <div v-html="event.description"></div>
+      <div class="mt-5">
+        <a :href="event.event_url">参加者募集ページへ</a>
+      </div>
+      <div class="mt-3">
+        <router-link to="/">一覧へ戻る</router-link>
+      </div>
     </div>
   </section>
 </template>
@@ -35,7 +39,12 @@
       events () {
         const events = this.$store.state.events
         return events
+      },
+      date () {
+        return this.event.started_at ? this.event.started_at.substr(0, 10) : '日時未定'
       }
+    },
+    methods: {
     },
     async fetch ({store, params}) {
       const event = store.getters.eventById(params.eventId)
@@ -46,3 +55,29 @@
   }
 </script>
 
+<style scoped="">
+  .date{
+    display: inline-block;
+    padding: .2em 2em;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: #a52205;
+    border-bottom: 3px solid #a52205;
+    margin-bottom:2em;
+  }
+
+  .subtitle{
+    display: inline-block;
+    padding: .2em 2em;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: #a52205;
+    border-bottom: 3px solid #a52205;
+    margin-bottom:1em;
+  }
+
+  .title{
+    font-size: 1.4em;
+    margin-bottom: 2em;
+  }
+</style>
