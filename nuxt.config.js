@@ -42,7 +42,7 @@ module.exports = {
   modules: [
     '@nuxtjs/dotenv',
     '@nuxtjs/proxy',
-    '@nuxtjs/pwa',
+    // '@nuxtjs/pwa',
     'bootstrap-vue/nuxt'
   ],
   proxy: {
